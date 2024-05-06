@@ -1,0 +1,59 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #ffcccc; /* Cor de fundo rosa claro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden; /* Para ocultar corações que estão fora da tela */
+}
+
+.hearts {
+    position: absolute;
+    width: 100%;
+    height: 100vh; /* Define a altura como 100% da viewport */
+    
+}
+
+.heart {
+    position: absolute;
+    width: 69px; /* Tamanho dos corações */
+    height: 60px;
+    background-image: url('heart.png');
+    background-size: contain;
+    animation: hearts 3s linear infinite; /* Define a animação dos corações */
+    opacity: 0.6;
+}
+
+.message {
+    z-index: 2;
+    text-align: center;
+    max-width: 80%; /* Limita a largura da mensagem */
+    margin: 20px;
+}
+
+.message h1 {
+    font-size: 32px; /* Tamanho da fonte do título */
+}
+
+.message p {
+    font-size: 24px; /* Tamanho da fonte do texto */
+    line-height: 1.5; /* Espaçamento entre linhas */
+}
+
+@keyframes hearts {
+    0% {
+        transform: translateY(-100%);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
